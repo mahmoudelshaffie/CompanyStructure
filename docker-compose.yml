@@ -1,0 +1,11 @@
+version: '2.2'
+services:
+  company-strucure:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: company-structure
+    expose:
+      - 8080
+    ports:
+      - 0.0.0.0:8080:8080/tcp
