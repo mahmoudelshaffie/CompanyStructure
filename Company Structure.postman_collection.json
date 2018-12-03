@@ -1,0 +1,435 @@
+{
+	"info": {
+		"_postman_id": "645269be-d142-458d-b54a-47ffb8fe6e9d",
+		"name": "Company Structure",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Initialize Structure",
+			"item": [
+				{
+					"name": "Get Current Version (Un Available Version)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6dcf8886-7c62-43fa-9f08-86a29ff2197b",
+								"exec": [
+									"pm.test(\"Expected Status code 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"NO_INITIALIZED_STRUCTURE\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}",
+							"host": [
+								"{{BASE_URL}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Current Version (Un Available Version)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{BASE_URL}}",
+									"host": [
+										"{{BASE_URL}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "131"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Nov 2018 10:38:31 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{code:'NO_INITIALIZED_STRUCTURE',message:'Company structure not initialized yet, you've to initialize it by creating its root !!!'}"
+						}
+					]
+				},
+				{
+					"name": "Initialize Company Structure",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8c107171-5de5-48c0-ae19-e1da76f92e43",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}?root={{ROOT_KEY}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"query": [
+								{
+									"key": "root",
+									"value": "{{ROOT_KEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current Version Return Most Recent One",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "56fd8427-94ef-41bb-a1a7-57b565cd2a14",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}",
+							"host": [
+								"{{BASE_URL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Add Positions",
+			"item": [
+				{
+					"name": "Add 11",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/1/children?child=11",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1",
+								"children"
+							],
+							"query": [
+								{
+									"key": "child",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add 111",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/11/children?child=111",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"11",
+								"children"
+							],
+							"query": [
+								{
+									"key": "child",
+									"value": "111"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add 112",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/11/children?child=112",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"11",
+								"children"
+							],
+							"query": [
+								{
+									"key": "child",
+									"value": "112"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add 12",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/1/children?child=12",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1",
+								"children"
+							],
+							"query": [
+								{
+									"key": "child",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add 121",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/12/children?child=121",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"12",
+								"children"
+							],
+							"query": [
+								{
+									"key": "child",
+									"value": "121"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add 122",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/12/children?child=122",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"12",
+								"children"
+							],
+							"query": [
+								{
+									"key": "child",
+									"value": "122"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b1b750e0-0cc4-4a63-8a63-e16d2adfab6c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ea3f9aa-0ad5-4830-a819-75a84f236200",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "UpdateParent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/1/parent?newParent=122",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"1",
+						"parent"
+					],
+					"query": [
+						{
+							"key": "newParent",
+							"value": "122"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Children",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/1/children",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"1",
+						"children"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7d865ae0-f0ba-4082-85d7-e94e210279c5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fd9088ef-2789-49e3-80bf-096b91fe741d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9bb0e826-6bd5-4f79-b730-d4b01e02b5e4",
+			"key": "BASE_URL",
+			"value": "http://localhost:8080\n/api/structure",
+			"type": "string"
+		},
+		{
+			"id": "ab8ecb9b-c0f2-4f97-a07e-7344dce3715e",
+			"key": "ROOT_KEY",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
